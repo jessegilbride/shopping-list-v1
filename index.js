@@ -6,7 +6,7 @@ app requirements:
 */
 
 // ----------------------------------------
-// add item functionality
+// "add item" functionality
 // ----------------------------------------
 $('#js-shopping-list-form').submit(function(event){
   event.preventDefault();
@@ -38,13 +38,15 @@ $('#js-shopping-list-form').submit(function(event){
 });
 
 // ----------------------------------------
-// remove item functionality
+// "remove item" functionality
 // ----------------------------------------
-
+$('.shopping-list').on("click", 'li', function(event){
+  $(this).closest('li').remove();
+});
 
 
 // ----------------------------------------
-// check/uncheck item functionality
+// "check/uncheck item" functionality
 // ----------------------------------------
 
 
