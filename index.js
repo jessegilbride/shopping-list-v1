@@ -40,15 +40,16 @@ $('#js-shopping-list-form').submit(function(event){
 // ----------------------------------------
 // "remove item" functionality
 // ----------------------------------------
-$('.shopping-list').on("click", 'li', function(event){
+$('.shopping-list').on('click', '.shopping-item-delete', function(event){
   $(this).closest('li').remove();
 });
-
 
 // ----------------------------------------
 // "check/uncheck item" functionality
 // ----------------------------------------
-
+$('.shopping-list').on('click', '.shopping-item-toggle', function(event){
+  $(this).parents('li').children('.shopping-item').toggleClass('shopping-item__checked');
+});
 
 
 /* 
