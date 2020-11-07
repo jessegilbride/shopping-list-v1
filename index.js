@@ -14,6 +14,13 @@ $('#js-shopping-list-form').submit(function(event){
   ////////// get the item to add to the list
   let newItem = $(this).find('input[id="shopping-list-entry"]').val();
 
+  ////////// basic form validation
+  if (newItem.trim() === "") {
+    alert("Please enter an item.");
+    resetTheForm();
+    return; // stop the "add item" functionality
+  }
+
   ////////// build the HTML component with newItem
   let newItemComponent = `
   <li>
@@ -33,7 +40,7 @@ $('#js-shopping-list-form').submit(function(event){
   $('ul.shopping-list').append(newItemComponent);
 
   ////////// reset the form input
-  document.getElementById("js-shopping-list-form").reset();
+  resetTheForm();
 
 });
 
@@ -51,6 +58,9 @@ $('.shopping-list').on('click', '.shopping-item-toggle', function(event){
   $(this).parents('li').children('.shopping-item').toggleClass('shopping-item__checked');
 });
 
+function resetTheForm(){
+  document.getElementById("js-shopping-list-form").reset();
+}
 
 /* 
 Future Enhancements: 
