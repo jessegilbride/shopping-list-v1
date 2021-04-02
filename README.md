@@ -1,3 +1,3 @@
-# Shopping List App Challenge
+# Shopping List App
 
-This repo contains files for the *Shopping List App* challenge.
+A basic shopping list written in vanilla JS.
